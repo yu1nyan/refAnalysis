@@ -1,45 +1,14 @@
-const int NChZ = 9;
-const int NChZAround = 8;
-const string histNameZNumberCenter = "11";
-const string histNameZNumberAround[] = {"02", "12", "22", "01", "21", "00", "10", "20"};
-const string histNameZNPE = "npz";
-// const string histNameZ[] = { "npz02", "npz12", "npz22", "npz01", "npz11", "npz21", "npz00", "npz10", "npz20" };
-const string histNameZAround[] = { "npz02", "npz12", "npz22", "npz01", "npz21", "npz00", "npz10", "npz20" };
-const string histNameZCenter = "npz11";
-// const string CubeGeometryName[] = { "UpperLeft", "Upper", "UpperRight", "Left", "Center", "Right", "LowerLeft", "Lower", "LowerRight" };
-const string CubeGeometryNameAround[] = { "UpperLeft", "Upper", "UpperRight", "Left", "Right", "LowerLeft", "Lower", "LowerRight" };
-// const string CubeGeometryNameCenter = "Center";
-// const string CubeGeometryTitle[] = { "upper left", "upper", "upper right", "left", "center", "right", "lower left", "lower", "lower right" };
-const string CubeGeometryTitleAround[] = { "upper left", "upper", "upper right", "left", "right", "lower left", "lower", "lower right" };
-// const string CubeGeometryTitleCenter = "center";
+enum class RunMode {WithoutRef, WithRef};
 
-const string histNameZHitTime = "hittimez";
+const double ThresholdRef = 20;   // Refありなしを判定するためのしきい値 (pe)
+const int FitRangeGausLeft = 10;
+const int FitRangeGausRight = 10;
 
-const string histNameCubeIn = "cubeinpos";
-const string histNameCubeOut = "cubeoutpos";
 
-const string histName2ndParticleFromCenter = "2ndFromCenterTo";
-const string histName2ndParticleFromHodo = "2ndFromHodoTo";
+const int UsingCh = 10;
+const int NRebin = 32;
+const int OverFlowCut = 4085;
 
-const string histNameCoord[] = {"x", "y", "z"};
-
-const double MinPECenter = -1.5;
-const double MaxPECenter = 108.5;
-const int NBinPECenter = 110;
-const double MinPEAround = -0.5;
-const double MaxPEAround = 9.5;
-const int NBinPEAround = 10;
-const double MinCT = -0.1;
-const double MaxCT = 1.0;
-const double NBinCT = 110;
-const double MinCTCellMap = 0.0;
-const double MaxCTCellMap = 10.0;
-
-const double CubeEdgeXY1 = -5.0; // mm
-const double CubeEdgeXY2 = 5.0;
-const double OmitXY1 = -3.4;    //mm
-const double OmitXY2 = 3.4;
-// const double CubeEdgeY1 = -5.0;
-// const double CubeEdgeY2 = 5.0;
-const double CubeEdgeZup = 5.0;
-const double CubeEdgeZdown = -5.0;
+const double AdcPedestal = 223.8;
+const double Adc1pe = 273.8;
+const double Gain = Adc1pe - AdcPedestal;
