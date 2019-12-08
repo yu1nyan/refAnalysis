@@ -186,7 +186,7 @@ void refAnalysis(string rootFileDirectory, string outputFileType = "png")
         runMode = RunMode::WithoutRef;
         // hist->Rebin(NRebin);
         hist->Fit("gaus", "", "", maxBin-FitRangeGausLeft, maxBin+FitRangeGausRight);
-        changeStatsBoxSize(hist, 0.15, 0.4, 0.6, 0.95);
+        changeStatsBoxSize(hist, 0.12, 0.5, 0.5, 0.92);
         changeOptionStat(hist, 10);
         changeOptionFit(hist, 110);
     }
@@ -215,6 +215,7 @@ int main(int argc, char** argv)
     if (argc <= 1 || argc >= 4)
     {
         cout << "refAnalysis <root file directory> <output file type>" << endl;
+        return -1;
     }
     if (argc >= 2)
     {
